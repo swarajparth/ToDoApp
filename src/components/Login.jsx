@@ -16,7 +16,7 @@ const Login = () => {
         value={username}
         onChangeText={setUsername}
         placeholder="Username"
-        maxLength={20}
+        maxLength={30}
       />
       <TextInput
         className="border border-blue-700 my-2 h-10"
@@ -24,9 +24,9 @@ const Login = () => {
         value={password}
         onChangeText={setPassword}
         placeholder="Password"
-        maxLength={20}
+        maxLength={30}
       />
-      <GlobalButton title="Login" variation="Rectangular" handler={() => login(username, password)} />
+      <GlobalButton title="Login" variation="large" handler={() => login(username, password)} />
     </View>
   )
 }

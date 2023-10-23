@@ -36,11 +36,11 @@ const DeleteModal = ({ route, navigation }) => {
           <View className="flex flex-row justify-evenly">
             <GlobalButton
               title="Delete"
-              variation="Rectangular"
+              variation="small"
               handler={handleDelete} />
             <GlobalButton
               title="Cancel"
-              variation="Rectangular"
+              variation="small"
               handler={() => {
                 setModalVisible(!modalVisible);
                 navigation.goBack();

@@ -38,29 +38,31 @@ const ToDoItemEditor = ({ route, navigation }) => {
 
   return (
     <ScrollView>
-      <TextInput
-        className="font-bold text-black m-2 py-3 text-center text-xl"
-        editable
-        multiline
-        textAlign="center"
-        value={title}
-        onChangeText={setTitle}
-        placeholder="Title"
-        maxLength={20}
-      />
-      <TextInput
-        className="m-2 text-justify text-xl"
-        editable
-        multiline
-        textAlign="center"
-        value={description}
-        onChangeText={setDescription}
-        placeholder="Description"
-      />
+      <View className="min-h-[84vh]">
+        <TextInput
+          className="font-bold text-black m-2 py-3 text-center text-xl"
+          editable
+          multiline
+          textAlign="center"
+          value={title}
+          onChangeText={setTitle}
+          placeholder="Title"
+          maxLength={30}
+        />
+        <TextInput
+          className="m-2 text-justify text-xl"
+          editable
+          multiline
+          textAlign="center"
+          value={description}
+          onChangeText={setDescription}
+          placeholder="Description"
+        />
+      </View>
       <View>
         <GlobalButton
           title="Save"
-          variation="Rectangular"
+          variation="large"
           handler={handleSave} />
       </View>
     </ScrollView>

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 
 
-const WelcomeScreen = ({navigation}) => {
+const WelcomeScreen = ({ navigation }) => {
   const toDoItemsCount = useSelector((state) => state.toDo.count);
 
   return (
@@ -28,8 +28,8 @@ const WelcomeScreen = ({navigation}) => {
         }
         <View>
           <GlobalButton
-            title="+"
-            variation="Circular"
+            title="Add item"
+            variation="round"
             handler={() => {
               navigation.navigate("ToDoItemEditor", {
                 toDoItem: {
