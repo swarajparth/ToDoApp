@@ -9,7 +9,6 @@ export default ({ children }) => {
     const dispatch = useDispatch();
 
     const [toDoList, setToDoList] = useState([]);
-    const [toDoItemText, setToDoItemText] = useState("");
 
     async function getToDoList() {
         try {
@@ -110,7 +109,6 @@ export default ({ children }) => {
     return (
         <ToDoContext.Provider
             value={{
-                toDoItemText,
                 toDoList,
                 createToDoItem,
                 editToDoItem,

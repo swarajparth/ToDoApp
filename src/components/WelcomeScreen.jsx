@@ -28,7 +28,7 @@ const WelcomeScreen = ({ navigation }) => {
         }
         <View>
           <GlobalButton
-            title="Add item"
+            title="Add Item"
             variation="round"
             handler={() => {
               navigation.navigate("ToDoItemEditor", {
@@ -38,8 +38,7 @@ const WelcomeScreen = ({ navigation }) => {
                 },
                 createNewToDoItem: true
               });
-              console.log("Create To Do Item Button called!");
-              console.log("+ button pressed");
+              console.log("Add Item Button called!");
             }} />
         </View>
       </View>
