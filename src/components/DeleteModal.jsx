@@ -50,7 +50,6 @@ const DeleteModal = ({ route, navigation }) => {
         </View>
       </Modal>
     </View>
-    // </View>
   )
 }
 
