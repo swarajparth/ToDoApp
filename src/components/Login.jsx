@@ -32,6 +32,7 @@ const Login = ({ navigation }) => {
         <TextInput
           className="border border-blue-700 my-2 h-10"
           textAlign="center"
+          secureTextEntry={true}
           value={password}
           onChangeText={setPassword}
           placeholder="Password"
