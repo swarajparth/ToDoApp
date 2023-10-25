@@ -51,7 +51,7 @@ const ToDoItem = ({ toDoItem }) => {
                             onPress={showMenu}
                         >
                             <Image className="w-5 h-5"
-                                source={require('../../assets/ellipsis.png')}
+                                source={require('../../../assets/ellipsis.png')}
                             />
                         </Pressable>
                     }

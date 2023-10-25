@@ -3,7 +3,7 @@ import React from 'react'
 import { Provider } from 'react-redux';
 import store from './src/app/store';
 import AuthContext from './src/context/AuthContext';
-import Home from './src/components/Home';
+import Home from './src/components/screens/Home';
 
 
 const App = () => {

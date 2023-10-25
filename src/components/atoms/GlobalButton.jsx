@@ -7,12 +7,12 @@ const GlobalButton = ({ title, variation, handler }) => {
     <View className={(variation === "small" ? "items-center" : "")}>
       {
         variation === "round" ?
-        <View className="flex items-center">
-          <Pressable onPress={handler} className="h-12 w-12 m-2 bg-blue-700 rounded-full">
-            <Text className="text-center text-white text-6xl">+</Text>
-          </Pressable>
-        </View> :
-
+          <View className="flex items-center">
+            <Pressable onPress={handler} className="h-12 w-12 m-2 bg-blue-700 rounded-full">
+              <Text className="text-center text-white text-6xl">+</Text>
+            </Pressable>
+          </View>
+          :
           <Button
             onPress={handler}
             title={title}

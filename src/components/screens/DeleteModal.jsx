@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, Modal, Text, Platform } from 'react-native'
-import GlobalButton from './GlobalButton';
-import { useToDo } from '../hooks/useToDo';
+import GlobalButton from '../atoms/GlobalButton';
+import { useToDo } from '../../hooks/useToDo';
 
 const DeleteModal = ({ route, navigation }) => {
   const { deleteToDoItem } = useToDo();

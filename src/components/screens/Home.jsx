@@ -2,8 +2,8 @@ import React from 'react'
 import { Text } from 'react-native'
 import WelcomeScreen from './WelcomeScreen';
 import Login from './Login';
-import { useAuth } from '../hooks/useAuth';
-import ToDoContext from '../context/ToDoContext';
+import { useAuth } from '../../hooks/useAuth';
+import ToDoContext from '../../context/ToDoContext';
 import { DrawerContentScrollView, DrawerItem, createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import ToDoItemDetails from './ToDoItemDetails';

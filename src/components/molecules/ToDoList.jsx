@@ -1,5 +1,5 @@
 import React from 'react'
-import { useToDo } from '../hooks/useToDo';
+import { useToDo } from '../../hooks/useToDo';
 import ToDoItem from './ToDoItem';
 import { FlatList } from 'react-native';
 
@@ -8,9 +8,10 @@ const ToDoList = () => {
 
     return (
         <FlatList
-            data={toDoList.reverse()}
+            data={[...toDoList].reverse()}
             renderItem={({ item }) => <ToDoItem toDoItem={item} />}
             keyExtractor={item => item._id}
+            // inverted={true}
         />
     )
 }

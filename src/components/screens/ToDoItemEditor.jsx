@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { TextInput, ScrollView, View, Alert } from 'react-native'
-import GlobalButton from './GlobalButton';
-import { useToDo } from '../hooks/useToDo';
+import GlobalButton from '../atoms/GlobalButton';
+import { useToDo } from '../../hooks/useToDo';
 
 const ToDoItemEditor = ({ route, navigation }) => {
   const toDoItem = route.params.toDoItem;
@@ -38,7 +38,7 @@ const ToDoItemEditor = ({ route, navigation }) => {
 
   return (
     <ScrollView>
-      <View className="min-h-[84vh]">
+      <View className="min-h-[85.3vh]">
         <TextInput
           className="font-bold text-black m-2 py-3 text-center text-xl"
           editable

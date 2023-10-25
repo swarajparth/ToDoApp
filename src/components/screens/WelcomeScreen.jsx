@@ -1,7 +1,7 @@
 import React from 'react'
 import { SafeAreaView, Text, View } from 'react-native'
-import GlobalButton from './GlobalButton';
-import ToDoList from './ToDoList';
+import GlobalButton from '../atoms/GlobalButton';
+import ToDoList from '../molecules/ToDoList';
 import { useSelector } from 'react-redux';
 
 

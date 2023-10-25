@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { View, TextInput } from 'react-native'
-import GlobalButton from './GlobalButton'
-import { useAuth } from '../hooks/useAuth'
-import Loader from './Loader';
+import GlobalButton from '../atoms/GlobalButton'
+import { useAuth } from '../../hooks/useAuth'
+import Loader from '../atoms/Loader';
 
 const Login = ({ navigation }) => {
   const { login, loggedIn, loading } = useAuth();
