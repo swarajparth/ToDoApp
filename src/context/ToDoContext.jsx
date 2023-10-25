@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCount } from '../app/toDoSlice';
+import { Platform } from 'react-native';
 
 
 export const ToDoContext = createContext({});
@@ -10,7 +11,8 @@ export default ({ children }) => {
 
     const [toDoList, setToDoList] = useState([]);
 
-    const url = "http://10.0.2.2:3000/api/";
+    const domain = Platform.OS === 'ios' ? "localhost" : "10.0.2.2";
+    const url = `http://${domain}:3000/api/`;
 
     async function getToDoList() {
         try {
@@ -33,8 +35,8 @@ export default ({ children }) => {
         console.log("createToDoItem function called in ToDoContext");
 
         try {
-            console.log("title in createToDoItem: "+ title);
-            console.log("description in createToDoItem: "+ description);
+            console.log("title in createToDoItem: " + title);
+            console.log("description in createToDoItem: " + description);
             const fetchRes = await fetch(url + "create-to-do-item", {
                 method: "POST",
                 headers: {
