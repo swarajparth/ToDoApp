@@ -10,9 +10,11 @@ export default ({ children }) => {
 
     const [toDoList, setToDoList] = useState([]);
 
+    const url = "http://10.0.2.2:3000/api/";
+
     async function getToDoList() {
         try {
-            const fetchRes = await fetch(`http://10.0.2.2:3000/api/to-do-list`);
+            const fetchRes = await fetch(url + "to-do-list");
             console.log('fetchRes: ', fetchRes);
 
             const data = await fetchRes.json();
@@ -33,7 +35,7 @@ export default ({ children }) => {
         try {
             console.log("title in createToDoItem: "+ title);
             console.log("description in createToDoItem: "+ description);
-            const fetchRes = await fetch("http://10.0.2.2:3000/api/create-to-do-item", {
+            const fetchRes = await fetch(url + "create-to-do-item", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -60,7 +62,7 @@ export default ({ children }) => {
         console.log("createToDoItem function called in ToDoContext");
 
         try {
-            const fetchRes = await fetch("http://10.0.2.2:3000/api/update-to-do-item", {
+            const fetchRes = await fetch(url + "update-to-do-item", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -88,7 +90,7 @@ export default ({ children }) => {
         console.log("deleteToDoItem function called in ToDoContext for _id: ", _id);
 
         try {
-            const fetchRes = await fetch(`http://10.0.2.2:3000/api/delete-to-do-item?id=${_id}`);
+            const fetchRes = await fetch(url + `delete-to-do-item?id=${_id}`);
             console.log('fetchRes: ', fetchRes);
 
             const data = await fetchRes.json();
