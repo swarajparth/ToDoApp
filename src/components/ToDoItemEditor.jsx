@@ -50,7 +50,7 @@ const ToDoItemEditor = ({ route, navigation }) => {
           maxLength={30}
         />
         <TextInput
-          className="m-2 text-justify text-xl"
+          className="m-2 text-center text-xl"
           editable
           multiline
           textAlign="center"

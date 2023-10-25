@@ -9,7 +9,7 @@ const ToDoItemDetails = ({ route }) => {
       <Text className="font-bold text-black m-2 py-3 text-center text-xl">
         {toDoItem.title}
       </Text>
-      <Text className="m-2 text-justify text-xl">
+      <Text className="m-2 text-center text-xl">
         {toDoItem.description}
       </Text>
     </ScrollView>

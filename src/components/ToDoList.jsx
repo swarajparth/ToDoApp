@@ -8,7 +8,7 @@ const ToDoList = () => {
 
     return (
         <FlatList
-            data={toDoList}
+            data={toDoList.reverse()}
             renderItem={({ item }) => <ToDoItem toDoItem={item} />}
             keyExtractor={item => item._id}
         />
