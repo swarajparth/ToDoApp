@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { TextInput, ScrollView, View, Alert } from 'react-native'
 import GlobalButton from '../atoms/GlobalButton';
-import { useToDo } from '../../hooks/useToDo';
+import { useDispatch } from 'react-redux';
+import { createToDoItem, editToDoItem } from '../../app/toDoSlice';
 
 const ToDoItemEditor = ({ route, navigation }) => {
   const toDoItem = route.params.toDoItem;
   const createNewToDoItem = route.params.createNewToDoItem;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const { createToDoItem, editToDoItem } = useToDo();
+  const dispatch = useDispatch();
+
 
   const handleSave = () => {
     if (title.trim() === "" && description.trim() === "") {
@@ -16,11 +18,13 @@ const ToDoItemEditor = ({ route, navigation }) => {
       console.log("Both Title and Description can't be empty!");
     }
     else {
+      const data = { title, description };
+
       if (createNewToDoItem) {
-        createToDoItem(title, description);
+        dispatch(createToDoItem(data));
       }
       else {
-        editToDoItem(toDoItem._id, title, description);
+        dispatch(editToDoItem({ _id: toDoItem._id, ...data }));
       }
       navigation.goBack();
       console.log("Save button called in ToDoItemEditor");

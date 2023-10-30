@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { View, Modal, Text, Platform } from 'react-native'
 import GlobalButton from '../atoms/GlobalButton';
-import { useToDo } from '../../hooks/useToDo';
+import { useDispatch } from 'react-redux';
+import { deleteToDoItem } from '../../app/toDoSlice';
 
 const DeleteModal = ({ route, navigation }) => {
-  const { deleteToDoItem } = useToDo();
+  const dispatch = useDispatch();
   const _id = route.params._id;
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleDelete = () => {
-    deleteToDoItem(_id);
+    dispatch(deleteToDoItem(_id));
     setModalVisible(!modalVisible);
     navigation.goBack();
     console.log("Confirmed to delete this ToDo Item");

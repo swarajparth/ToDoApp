@@ -1,17 +1,16 @@
 import React from 'react'
-import { useToDo } from '../../hooks/useToDo';
 import ToDoItem from './ToDoItem';
 import { FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
 
 const ToDoList = () => {
-    const { toDoList } = useToDo();
+    const toDoList = useSelector((state) => state.toDo.toDoList);
 
     return (
         <FlatList
             data={[...toDoList].reverse()}
             renderItem={({ item }) => <ToDoItem toDoItem={item} />}
             keyExtractor={item => item._id}
-            // inverted={true}
         />
     )
 }
